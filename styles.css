@@ -1,0 +1,217 @@
+:root {
+    --background: #ffffff;
+    --foreground: #0f0f0f;
+    --card: #ffffff;
+    --card-foreground: #0f0f0f;
+    --primary: #2dd4bf;
+    --primary-foreground: #fff;
+    --secondary: #f3f4f6;
+    --secondary-foreground: #1f2937;
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #2dd4bf;
+    --radius: 0.75rem;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 36rem;
+    padding: 1rem;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.125rem;
+    border: 1px solid var(--input);
+    border-radius: var(--radius);
+    background: var(--background);
+    font-family: monospace;
+  }
+  
+  .input:focus {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  
+  .result-container {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: var(--secondary);
+    border-radius: var(--radius);
+  }
+  
+  .result-section {
+    margin-bottom: 1rem;
+  }
+  
+  .result-label {
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .result-value {
+    font-family: monospace;
+    font-size: 1.125rem;
+    word-break: break-all;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  
+  .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  
+  .arrow {
+    margin: 0 0.5rem;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .button {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  
+  .button:hover {
+    opacity: 0.9;
+  }
+  
+  .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .button-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--foreground);
+  }
+  
+  .button-outline:hover {
+    background: var(--secondary);
+  }
+  
+  .icon {
+    margin-right: 0.5rem;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  .toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  .toast-title {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  
+  .toast-description {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
